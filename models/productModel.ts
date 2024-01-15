@@ -1,18 +1,21 @@
 // src/models/UserModel.ts
 import { prop, getModelForClass } from "@typegoose/typegoose";
 
-export class User {
+export class Product {
   @prop({ required: true })
   name!: string;
 
   @prop({ required: true })
-  email!: string;
-
-  @prop({required:true})
-  phoneNumber!:number;
+  description?: string;
 
   @prop()
-  age?: number;
+  category?: string;
+
+  @prop()
+  price!: number;
+
+  @prop()
+  stock!: number;
 }
 
-export const UserModel = getModelForClass(User);
+export const ProductModel = getModelForClass(Product);

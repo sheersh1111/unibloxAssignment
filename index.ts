@@ -1,10 +1,17 @@
 // src/index.ts
 import express from 'express';
-
+import dotenv from 'dotenv';
+import { connectDatabase } from './config/database';
+import { UserModel } from './models/userModel';
 const app = express();
 const port = 4000;
 
-app.get('/', (req, res) => {
+dotenv.config({path:"config/config.env"});
+
+connectDatabase();
+
+app.get('/', async(req, res) => {
+  
   res.send('Hello, Express TypeScript!');
 });
 
