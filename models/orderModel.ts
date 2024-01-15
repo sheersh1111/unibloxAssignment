@@ -22,12 +22,9 @@ export class Order {
   
   @prop()
   shippingAddress?:string;
-  
-  public get amount(){
-    return this.products?.reduce((acc,product)=>{
-        return acc + (product.product.price * product.quantity);
-    },0);
-  }
+
+  @prop()
+  amount!:number
 }
 
 export const OrderModel = getModelForClass(Order);
