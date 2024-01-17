@@ -1,4 +1,4 @@
-const ErrorHandler=require("../utils/errorhandler");
+import { ErrorHandler } from "../utils/errorHandler";
 module.exports=(err:any,req:any,res:any,next:any)=>{
 
     err.statusCode=err.statusCode||500;

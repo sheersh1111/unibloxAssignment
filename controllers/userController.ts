@@ -1,6 +1,7 @@
 import { UserModel } from "../models/userModel";
 import { sendToken } from "../utils/jwtToken";
 import { catchAsyncErrors } from "../middleware/catchAsyncErrors";
+import { ErrorHandler } from "../utils/errorHandler";
 export const registerUser = catchAsyncErrors(async (req:any, res:any, next:any) => {
 
     const { name, email, password,phoneNumber } = req.body;
@@ -28,7 +29,7 @@ export const loginUser = async(req:any, res:any,next:any) => {
             sendToken(user, 200, res);
         }
         else {
-            return next(new ErrorHandler("Invalid Email or password"),400);
+            return next(new ErrorHandler("Invalid Email or password",400));
         }
     
 };
