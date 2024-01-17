@@ -9,7 +9,10 @@ export class User {
   email!: string;
 
   @prop({required:true})
-  phoneNumber!:number;
+  phoneNumber!:string;
+
+  @prop({required:true})
+  password!:string;
 
   @prop()
   age?: number;
