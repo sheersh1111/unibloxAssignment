@@ -16,6 +16,9 @@ export class User {
 
   @prop()
   age?: number;
+
+  @prop({default:'user'})
+  role?: string
 }
 
 export const UserModel = getModelForClass(User);
